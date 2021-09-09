@@ -1,0 +1,44 @@
+import java.util.Scanner;
+class Username extends Exception
+{
+    Username(String s)
+    {
+        super(s);
+    }
+}
+class Password extends Exception
+{
+    Password(String s)
+    {
+        super(s);
+    }
+}
+class Authentication
+{
+    public static void main(String args[]) {
+        
+        String username,password;
+           try{
+                Scanner sc=new Scanner(System.in);
+                System.out.println("enter the username:");
+                username=sc.nextLine();
+                System.out.println("enter the password:");
+                password=sc.nextLine();
+                if(!username.equals("abc"))
+                    throw new Username("incorrect Username");
+                else if(!password.equals("abc"))               
+                     throw new  Password("incorrect password");
+                else
+                     System.out.println("\t\t\tlogin successfull......");
+                }
+                 catch(Username e){
+                        System.out.println(e);
+                  }
+                  catch(Password e){
+                         System.out.println(e);
+                  }
+                 finally{
+                       System.out.println("\n \n program ends....");
+}
+}
+}
